@@ -1,5 +1,4 @@
 import allure
-import pytest
 
 from page.logo_page import LogoPage
 

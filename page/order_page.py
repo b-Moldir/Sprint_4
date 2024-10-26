@@ -1,9 +1,4 @@
-import time
 
-from selenium.common import TimeoutException
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.wait import WebDriverWait
 
 from locators.order_page_locators import OrderPageLocators
 from page.base_page import BasePage

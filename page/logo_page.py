@@ -1,6 +1,5 @@
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
-import time
 from page.base_page import BasePage
 from locators.logo_page_locators import LogoPageLocators
 import allure
