@@ -5,12 +5,12 @@ import allure
 
 class MainPage(BasePage):
 
-    @allure.step("Прокрутить страницу до Вопросы о важном")
+    @allure.step('Прокрутить страницу до Вопросы о важном')
     def scroll_until_the_questions(self):
         locator_7 = self.change_locators(MainPageLocators.QUESTION_LOCATOR, 7)
         self.scroll_until_the_last(locator_7)
 
-    @allure.step("Кликаем на вопроc")
+    @allure.step('Кликаем на вопроc')
     def click_question_element(self, locator_q):
         self.click(locator_q)
 

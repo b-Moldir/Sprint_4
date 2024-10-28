@@ -9,3 +9,7 @@ def driver():
     yield driver
     driver.quit()
 
+
+@pytest.fixture()
+def expected_url():
+    return "https://dzen.ru/?yredirect=true"

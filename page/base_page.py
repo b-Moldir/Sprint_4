@@ -5,14 +5,11 @@ from selenium.webdriver.support.wait import WebDriverWait
 class BasePage:
 
     def __init__(self, driver):
+        self.expected_url = None
         self.driver = driver
 
     def find_element_with_wait(self, locator):
         WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located(locator))
-        return self.driver.find_element(*locator)
-
-    def element_to_be_clickable(self, locator):
-        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(locator))
         return self.driver.find_element(*locator)
 
     def click_to_element(self, locator):
@@ -41,6 +38,12 @@ class BasePage:
         locator = locator.format(int(num))
         return method, locator
 
+    def go_to_another_page(self,expected_url):
+        self.expected_url = expected_url
+        WebDriverWait(self.driver, 20).until(EC.url_to_be(expected_url))
 
+    def window_handles(self):
+        window_handles = self.driver.window_handles
+        self.driver.switch_to.window(window_handles[-1])
 
 

@@ -6,6 +6,7 @@ from page.main_page import MainPage
 
 
 class TestMainPage:
+    @allure.title('Проверка выпадающего списка в разделе "Вопросы о важном"')
     @allure.description(
         'Проверяем, что при клике на вопрос ответ правильный')
     @pytest.mark.parametrize('question,answer', QUESTIONS_AND_ANSWERS)
